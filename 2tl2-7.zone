@@ -1,12 +1,13 @@
 $ORIGIN l2-7.ephec-ti.be.
 $TTL 86400
-@       IN      SOA     soa.l2-7.ephec-ti.be.   hostmaster.l2-7.>                        2025032201 ; serial
+@       IN      SOA     ns.l2-7.ephec-ti.be.   hostmaster.l2-7.ephec-ti.be. (
+                        2025032203 ; serial
                         21600      ; refresh after 6 hours
                         3600       ; retry after 1 hour
                         604800     ; expire after 1 week
                         86400 )    ; minimum TTL of 1 day
 
-@       IN      NS      soa.l2-7.ephec-ti.be.
+@       IN      NS      ns.l2-7.ephec-ti.be.
 
-soa     IN      A       54.36.183.222
-www     IN      CNAME   soa
+ns     IN      A       54.36.183.222
+www     IN      CNAME   ns
