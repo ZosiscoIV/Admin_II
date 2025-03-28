@@ -1,0 +1,8 @@
+services:
+  dns:
+    image: dns_serv_v2
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    container_name: dns
+    restart: unless-stopped

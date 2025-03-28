@@ -1,0 +1,44 @@
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./www:/var/www/html/www
+    networks:
+      - dmz_net
+    depends_on:
+      - php
+
+  php:
+    build:
+      context: ./php
+    volumes:
+      - ./www:/var/www/html/www
+    networks:
+      - dmz_net
+      - db_net
+    depends_on:
+      - db
+    env_file:
+      - db.env
+
+  db:
+    image: mariadb:latest
+    env_file:
+      - db.env
+      - db/root.env
+    volumes:
+      - maria-db:/var/lib/mysql
+      - ./woodytoys.sql:/docker-entrypoint-initdb.d/woodytoys.sql
+      - ./my-resolve.cnf:/etc/mysql/conf.d/my-resolve.cnf
+    networks:
+      - db_net
+
+volumes:
+  maria-db:
+
+networks:
+  dmz_net:
+  db_net:

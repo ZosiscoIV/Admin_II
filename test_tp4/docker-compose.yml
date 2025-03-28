@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  dns:
+    image: image_dns
+    container_name: dns
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    volumes:
+      - /home/moiwesh/test_tp4/named.conf:/etc/bind/named.conf
+      - /home/moiwesh/test_tp4/2tl7.zone:/etc/bind/2tl7.zone

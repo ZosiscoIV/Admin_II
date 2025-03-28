@@ -1,0 +1,16 @@
+$ORIGIN l2-7.ephec-ti.be.
+$TTL 86400
+@       IN      SOA     l2-7.ephec-ti.be.   hostmaster.l2-7.ephec-ti.be. (
+                        2025031401 ; serial
+                        21600      ; refresh after 6 hours
+                        3600       ; retry after 1 hour
+                        604800     ; expire after 1 week
+                        86400 )    ; minimum TTL of 1 day
+
+        IN      NS      soa.l2-7.ephec-ti.be.
+
+soa     IN      A       192.168.0.3
+resolv  IN      A       192.168.0.2
+dhcp    IN      A       192.168.0.1
+www     IN      A       192.168.0.4
+mail    IN      A       192.168.0.5
