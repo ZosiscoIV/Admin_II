@@ -431,3 +431,12 @@ ll
 nano 2tl2-7.zone 
 cat named.conf 
 exit
+mkdir tp6
+cd tp6
+ls -R
+mkdir db
+nano root.env
+nano db.env
+nano my-resolv.cnf
+nano www/products.php 
+nano docker-compose.yml 
