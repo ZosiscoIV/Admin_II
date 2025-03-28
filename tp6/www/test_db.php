@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     echo "Connexion réussie à la base de données !";
 }
 
-$query = "INSERT INTO products (id, product_name, product_price) VALUES (999, 'Test', 0.99)";
+$query = "INSERT INTO products (product_name, product_price) VALUES ('test', '9')";
 if (mysqli_query($conn, $query)) {
     echo "Erreur : l'insertion est possible, ce qui est un problème !";
 } else {
@@ -21,4 +21,5 @@ if (mysqli_query($conn, $query)) {
 
 $conn->close();
 ?>
+
 
