@@ -1,7 +1,7 @@
 $ORIGIN l2-7.ephec-ti.be.
 $TTL 86400
 @       IN      SOA     ns.l2-7.ephec-ti.be.   hostmaster.l2-7.ephec-ti.be. (
-                        2025032503 ; serial
+                        2025041603 ; serial
                         21600      ; refresh after 6 hours
                         3600       ; retry after 1 hour
                         604800     ; expire after 1 week
@@ -9,6 +9,20 @@ $TTL 86400
 
 @       IN      NS      ns.l2-7.ephec-ti.be.
 
+@	IN	MX	10	mail.l2-7.ephec-ti.be.
+
+mail._domainkey	IN	TXT	( "v=DKIM1; h=sha256; k=rsa; "
+	  "p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA9qXVcZ92tdfPpfrWLGxHxUr2tXrjYEDDhz9U/9NkLWvmDAsnP1Kj5GyF4pAVfRcT1TDp0qhvdsUte+JqVaeYCUfaXxTv6I8NpUr7pi1Fe/38yKwysupGkJjL79JdgM6gHZBFEJNuJwYEj60Qh31EKKgEbie5VZ9v6MbPPAaN+0eNTmAQ8SJrjhY2Elbqu++wKsKwUAqja7/QLQ"
+	  "tgb0KAeAEdVzalkzxj/eamSEBPq5mCG9SzBzvCObOzTaY0ELYt60waJNrO06StDmrsojLrhpKrmtwqRqjvhHx5uYfXw3ix25JElkxpcjvYqh8l9kJjpj/aMV8CEf3zYrJTCNVt+wIDAQAB" )  ; ----- DKIM key mail for l2-7.ephec-ti.be
+
+
+@	IN	TXT	"v=spf1 mx -all"
+
+_dmarc.l2-7.ephec-ti.be. IN TXT "v=DMARC1; p=none; sp=none; aspf=s; ri=86400"
+
+mail	IN	A	54.36.183.222
 ns	IN      A       54.36.183.222
 www     IN      A       54.36.183.222
-blog    IN      A       54.36.183.222
+blog    IN      CNAME   www
+www2    IN      A       54.36.183.93
+
